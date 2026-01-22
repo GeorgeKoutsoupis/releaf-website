@@ -1,0 +1,970 @@
+/* ================= CSS VARIABLES ================= */
+:root {
+  --green: #40916C;
+  --bg-light: #F8FAF8;
+  --text-dark: #333333;
+}
+
+/* ================= BASE STYLES ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 .highlight {
+  color: var(--green);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+a:focus {
+  outline: 2px dashed var(--green);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--green) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= NAVBAR ON SCROLL ================= */
+.navbar.scrolled {
+  background-color: #333333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled a {
+  color: #ffffff;
+}
+
+.navbar.scrolled {
+  border-color: #ffffff;
+}
+
+/* ================= HAMBURGER MENU ================= */
+.hamburger {
+  display: none;
+  /* κρυφό σε desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--green);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ================= HOME PAGE ================= */
+/* HERO */
+.hero {
+  height: 90vh;
+  padding-top: 90px;
+  /* για να μην κρύβεται από το navbar */
+  background: url("MediaAssets/fantasy-fish-made-plastic.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Overlay για καλύτερο contrast */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 700px;
+  position: relative;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.btn-secondary {
+  border: 2px solid var(--green);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+
+/* TWO COLUMNS */
+.two-columns {
+  display: flex;
+  gap: 3rem;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.video-content {
+  flex: 1;
+}
+
+.video-content iframe {
+  width: 100%;
+  height: 300px;
+}
+
+
+/* FEATURES HOME PAGE */
+.features {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.feature-card img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+
+
+/* PROCESS HOME PAGE */
+.process {
+  background-color: var(--bg-light);
+}
+
+.process-row {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  transition: all 0.3s ease;
+}
+
+.process-row div {
+  width: 50%;
+}
+
+.process-row img {
+  max-width: 480px;
+  width: 50%;
+  border-radius: 12px;
+}
+
+/* STATISTICS HOME PAGE */
+.live-stats {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.stats-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.stat span {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.stat {
+  padding: 0 0.5rem;
+}
+
+.stat p {
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  max-width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* LATEST NEWS HOME PAGE */
+.latest-news {
+  position: relative;
+  background-image: url("MediaAssets/news-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Parallax background */
+  background-attachment: fixed;
+  padding: 6rem 0;
+}
+
+.latest-news .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1;
+}
+
+.latest-news .container {
+  position: relative;
+  z-index: 2;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.news-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+
+
+/* ================= ABOUT PAGE ================= */
+
+.about-image img,
+.partners-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* VISION & GOALS */
+/* Vision */
+.vision-box {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.vision-box blockquote {
+  margin: 2rem 0 0;
+  padding: 2rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background-color: #ffffff;
+  border-left: 4px solid var(--green);
+  border-right: 4px solid var(--green);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Goals */
+.goals-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vision-goals {
+  background-color: #ffffff;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.goal-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.goal-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.goal-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background-color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-icon img {
+  width: 30px;
+}
+
+/* Partners */
+.partners a:hover {
+  color: var(--green);
+  text-decoration: none;
+}
+
+/* Social Box for About Page and Contact Page*/
+.social-box {
+  background-color: #f1f5f3;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--green)
+    /* Χρώμα όταν περνάει το ποντίκι */
+}
+
+
+/* ================= SERVICES PAGE ================= */
+
+.services {
+  padding: 4rem 0;
+}
+
+.container-services {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.services h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.services-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: #555;
+}
+
+header.services {
+  padding: 4rem 0 2rem 0;
+  /* πάνω 4rem, κάτω 2rem */
+}
+
+/* Grid layout */
+.services-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 0;
+  gap: 2rem;
+}
+
+/* Service card */
+.service-card-services {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.service-card-services:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Images */
+.service-card-services img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Titles */
+.service-card-services h2 {
+  margin-bottom: 1rem;
+  color: #1f6f5c;
+  /* ίδιο πράσινο με menu hover */
+}
+
+/* Impact text */
+.service-card-services .impact {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+
+/* ================= BLOG PAGE ================= */
+
+.page-header {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* H1 style refers to most pages, except Home Page */
+.page-header h1 {
+  margin-top: 8rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+  color: var(--green);
+  font-size: 1.8rem;
+}
+
+.infographic-embed a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--green);
+}
+
+/* Accordion */
+.accordion-header {
+  font-size: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: none;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.accordion-header:hover {
+  background-color: var(--green);
+}
+
+.accordion-content {
+  display: none;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+/* Articles */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.article-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.article-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.article-hero {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+
+/* ================= CONTACT PAGE ================= */
+.contact-section .two-columns {
+  align-items: flex-start;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 700px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#formMessage {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Required field indicator */
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: #222;
+  color: #fff;
+
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.gemi {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--green);
+}
+
+.footer-contact p {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.footer-iso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0 0;
+}
+
+.footer-iso img {
+  width: 80px;
+  height: auto;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+
+/* ================= RESPONSIVE ================= */
+/* Menu */
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+}
+
+/* Hamburger Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    /* λίγο κάτω από το navbar */
+    right: -100%;
+    /* κρυμμένο εκτός οθόνης */
+    height: calc(100vh - 70px);
+    width: 250px;
+    background-color: #333;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links a {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    /* εμφανίζεται σε mobile */
+  }
+
+}
+
+/* Hamburger animation when active */
+.hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: center;
+  position: relative;
+  top: 8px;
+}
+
+.hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: center;
+  position: relative;
+  top: -8px;
+}
+
+/* CTA buttons at Hero Section of Home Page */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* features of Home Page */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Statistics of Home Page */
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
+  .stat span {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat p {
+  font-size: 0.85rem;
+}
+
+
+/* Process of Home Page */
+@media (max-width: 768px) {
+  .process-row {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.8rem;
+  }
+
+  .process-row.reverse {
+    flex-direction: column;
+  }
+
+  .process-row img,
+  .process-row div {
+    width: 100%;
+  }
+
+  .process-row img {
+    max-width: 100%;
+  }
+}
+
+/* Accessibility practice for animations */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Latest News of Home Page */
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-news {
+    background-attachment: scroll;
+  }
+}
+
+/* Footer */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: 2rem;
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-iso {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .footer-iso img {
+    width: 60px;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-logo {
+    max-width: 90px;
+  }
+
+  .footer-iso img {
+    width: 50px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+/* Services Page */
+@media (max-width: 768px) {
+  .services-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Article Hero Image */
+@media (max-width: 768px) {
+  .article-hero {
+    max-height: 260px;
+  }
+}
+
+/* Contact Form */
+@media (min-width: 992px) {
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+/* ================= DEBUGGING (ΟΝ/OFF) ================= 
+* {
+  outline: 1px solid red;
+}
+====================================================== */
