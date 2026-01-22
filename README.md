@@ -13,3 +13,10 @@ A responsive corporate website focused on sustainability and plastic recycling.
 - Accessibility-focused structure
 - SEO-friendly semantics
 - Scroll animations & parallax effects
+
+## Tools Used
+- AI (ChatGPT)
+- Gemini (Nano Banana)
+- Canva
+- Affinity
+- Visual Studio Code
