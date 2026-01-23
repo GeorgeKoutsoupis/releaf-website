@@ -17,6 +17,11 @@ body {
   color: var(--text-dark);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3 {
@@ -101,10 +106,10 @@ a:focus {
 
 /* ================= HAMBURGER MENU ================= */
 .hamburger {
-  display: none;/* κρυφό σε desktop */
+  display: none;
+  /* κρυφό σε desktop */
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   width: 25px;
   height: 20px;
   cursor: pointer;
