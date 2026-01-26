@@ -17,8 +17,7 @@ body {
   color: var(--text-dark);
 }
 
-html,
-body {
+html, body {
   overflow-x: hidden;
 }
 
